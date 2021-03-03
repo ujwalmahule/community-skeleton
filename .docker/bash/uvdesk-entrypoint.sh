@@ -40,6 +40,6 @@ else
 fi
 
 # Step down from sudo to uvdesk
-/usr/local/bin/gosu uvdesk "$@"
+# /usr/local/bin/gosu uvdesk "$@"
 
-exec "$@"
+# exec "$@"
