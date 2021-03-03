@@ -15,11 +15,11 @@ RUN apt-get update && apt-get -y upgrade \
         unzip \
         apache2 \
         mysql-server \
-        php7.2 \
-        libapache2-mod-php7.2 \
+        php7.4 \
+        libapache2-mod-php7.4 \
         php-xml \
-        php7.2-imap \
-        php7.2-mysql \
+        php7.4-imap \
+        php7.4-mysql \
         php-mailparse \
         ca-certificates; \
     if ! command -v gpg; then \
@@ -36,7 +36,7 @@ COPY . /var/www/uvdesk/
 
 RUN \
     # Update apache configurations
-    a2enmod php7.2 rewrite; \
+    a2enmod php7.4 rewrite; \
     chmod +x /usr/local/bin/uvdesk-entrypoint.sh; \
     # Install gosu for stepping-down from root to a non-privileged user during container startup
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
